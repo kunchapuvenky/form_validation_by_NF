@@ -6,11 +6,11 @@ from django.http import HttpResponse
 
 
 def student(request):
-    SFO=studentForm()
+    SFO=StudentForm()
     d={'SFO':SFO}
 
     if request.method=='POST':
-        SFD=studentForm(request.POST)
+        SFD=StudentForm(request.POST)
         if SFD.is_valid():
             return HttpResponse(str(SFD.cleaned_data))
         else:
